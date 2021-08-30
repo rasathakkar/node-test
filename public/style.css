@@ -1,0 +1,15 @@
+* {
+    margin: 10px;
+}
+
+body {
+    background-color: yellow;
+}
+
+.bgRed {
+    background-color: red;
+}
+
+.bgBlue {
+    background-color: blue;
+}

@@ -1,0 +1,11 @@
+<%- include('./partials/top') -%>
+    <%- include('./partials/nav') -%>
+    <h1>contact</h1>
+
+    <% if(isAdmin) {%>
+    <h1>Admin Options</h1>
+        <% } else {%>
+    <h2>Normal User Options</h2>
+    <% } %>
+</body>
+</html>

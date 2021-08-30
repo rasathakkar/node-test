@@ -1,0 +1,16 @@
+
+
+    <%- include('./partials/top') -%>
+    <%- include('./partials/nav') -%>
+    <!-- <% for(var i=0;i<=5;i++) { %>
+    <h1>This is heading</h1>
+    <% }%> -->
+    <h1>Hello, <%= name[1] %></h1>
+
+    <ul>
+        <%for(var i=0;i<name.length;i++) {%>
+        <li> <%= name[i]%></li>
+        <% }%>
+    </ul>
+</body>
+</html>

@@ -1,11 +1,14 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const PORT = 8300
+const mongoose = require('mongoose');
+// const PORT = 8300
+require('dotenv').config()
 
 const userRoutes = require('./routes/userRoutes')
 const adminRoutes = require('./routes/adminRoutes')
 
+mongoose.connect(process.env.MONGO_URL);
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -22,6 +25,6 @@ app.get('*',(req,res) => {
     res.send('<h1>Other routes</h1>')
 })
 
-app.listen(PORT,(req,res) => {
+app.listen(process.env.PORT,(req,res) => {
     console.log(`Connected at PORT ${PORT}`);
 })

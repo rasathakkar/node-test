@@ -1,20 +1,14 @@
 const path = require('path')
 const express = require('express')
+const {home,contact} = require('../controller/userController')
 
 const router = express.Router()
 
-router.get('/',(req,res) => {
-    // console.log(req);
-    // console.log("At /");
-    // res.sendFile(path.join(__dirname,'../index.html'))
-    // res.json({msg:'Hello'})
-    res.render('home',{name:['Aman','Amit','Rahul']})
-})
+router.get('/',home)
 
-router.get('/contact',(req,res) => {
-    //res.status(404)
-    res.render('contact',{isAdmin:false})
-})
+router.get('/contact',contact)
+
+
 router.get('/services',(req,res) => {
 
     var data = [
@@ -28,6 +22,12 @@ router.get('/services',(req,res) => {
 router.get('/products',(req,res) => {
     //res.status(404)
     res.render('products',{bg:"bgBlue"})
+})
+router.get('/item/:id',(req,res) => {
+    // console.log(req.params);
+    var id = req.params.num
+    // //res.status(404)
+    res.render('item',{id})
 })
 
 module.exports = router
